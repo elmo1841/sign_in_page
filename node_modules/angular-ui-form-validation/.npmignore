@@ -1,0 +1,7 @@
+.htaccess
+npm-debug.log
+node_modules
+.tmp
+.sass-cache
+.idea/
+app/bower_components

@@ -1,0 +1,175 @@
+/*default styles for serendipity page*/
+
+body {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 5em;
+  color: rgb(255, 255, 255);
+  background-image: url("../images/background-3.jpg");
+}
+
+
+.login_container, .signup_container {
+  position: relative;
+  /*left: 530px;*/
+  top: 100px;
+
+}.icon_change_thumb{
+
+  }
+
+.main_container {
+  margin-left: 200px;
+}
+
+.login_row, .signup_row {
+  height: 50px;
+  width: 90%
+}
+
+.icon_change_thumb {
+  float: left;
+}
+
+.explain_row>p {
+  font-family: monospace;
+  font-size: xx-large;
+  color: yellow;
+}
+
+.form_col {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50px;
+  background-color: rgba(10, 10, 10, 0.8);
+  margin: 10px;
+  padding: 20px 15px;
+  padding-left: 30px;
+  width: 45%;
+  min-height: 400px;
+}
+
+.icon_change_row {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50px 50px 0px 0px;
+  background-color: rgba(10, 10, 10, 0.8);
+  padding: 20px 15px;
+  padding-left: 30px;
+  width: 92%;
+  min-height: 200px;
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+input {
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  font-size: .5em;
+  color: black;
+}
+
+.explanation_text {
+  font-size: .5em;
+}
+
+.col-lg-3 {
+  width: 25%;
+}
+
+.col-lg-2 {
+  width: 15%;
+}
+
+.col-lg-1 {
+  width: 8%;
+}
+
+
+.error_message>p {
+  font-size: .4em;
+  font-weight: bold;
+  color: red;
+}
+
+.loading_block {
+  background-image: url("../images/loading_2.gif");
+    background-size: 150%;
+    height: 700px;
+    left: 190px;
+    position: relative;
+    top: 55px;
+    width: 500px;
+}
+
+.loading_text>p {
+  font-size: 2em;
+  font-family: fantasy;
+  position: relative;
+  text-align: center;
+  text-shadow: rgba(15, 15, 15, 0.8) 4px 4px 5px;
+  top: 55px
+}
+
+.top_row {
+  /*background-color: rgba(255, 255, 255, 0.5);*/
+  background: linear-gradient(to right, rgba(250, 250, 250, 1), rgba(250, 250, 250, 0));
+  margin-top: 10px;
+  padding: 20px 50px;
+}
+
+.user_status_display {
+  color: white;
+  height: 35px;
+  width: 100px !important;
+  background: black;
+}
+
+.caret {
+  color: white;
+}
+
+.status_btn {
+  background: black;
+}
+
+.status_input_group {
+  padding-top: 20px;
+
+}
+
+.screen_name_col {
+  color: black;
+}
+
+.head_container {
+  margin: 0;
+  width: 100%;
+}
+
+.head_row>.col-lg-2{
+  width:250px;
+}
+
+.head_title_col {
+  width: 400px !important;
+}
+
+.top_row>h1 {
+  color: black;
+  font-size: 1.2em;
+  font-family: fantasy;
+  letter-spacing: .4em;
+  text-shadow: rgb(245, 245, 245) 4px 4px 5px;
+}
+
+.col-lg-2>h1 {
+  color: black;
+  font-size: 1em;
+  font-family: fantasy;
+  letter-spacing: .4em;
+  text-shadow: rgb(245, 245, 245) 4px 4px 5px;
+}
+
+.top_row>.btn-group-lg>.btn, .btn-lg {
+  background-color: black !important;
+}

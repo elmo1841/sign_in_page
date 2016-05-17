@@ -1,0 +1,9 @@
+<div class="container main_container">
+  <div class="row visible_friends_row">
+    <div class="visible_friend_section" ng-repeat="friend in friends_ctrl.visible_friends_list">
+      <p ng-bind="friend.username"></p>
+      <img ng-src="{{friend.icon}}" alt="icon" class="icon"></img>
+      <button ng-click="friends_ctrl.addFriend(friend.username)" class="btn btn-default">Add Friend</button>
+    </div>
+  </div>
+</div>

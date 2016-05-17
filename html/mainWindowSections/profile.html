@@ -1,0 +1,135 @@
+<div>
+
+  <div class="container main_container">
+    <div class="row main_row">
+      <div class="col-lg-12 main_page_col">
+
+        <div class="row action_row">
+
+          <div class="col-lg-6 form_col">
+
+            <div class="row profile_form_row">
+              <div class="col-lg-4 profile_form_col">
+                <h3>ScreenName: </h3>
+              </div>
+              <div class="col-lg-6 profile_form_col">
+                <h3 ng-bind="profile_ctrl.user_settings.screenname"></h3>
+              </div>
+              <div class="col-lg-2 profile_form_col">
+                <button class="btn btn-default" ng-click="profile_ctrl.change('change_screenname')">Change</button>
+              </div>
+            </div>
+
+            <div class="row profile_form_row">
+              <div class="col-lg-4 profile_form_col">
+                <h3>Email: </h3>
+              </div>
+              <div class="col-lg-6 profile_form_col">
+                <h3 ng-bind="profile_ctrl.user_settings.email"></h3>
+              </div>
+              <div class="col-lg-2 profile_form_col">
+                <button class="btn btn-default" ng-click="profile_ctrl.change('change_email')">Change</button>
+              </div>
+            </div>
+
+            <div class="row profile_form_row">
+              <div class="col-lg-4 profile_form_col">
+                <h3>Password: </h3>
+              </div>
+              <div class="col-lg-6 profile_form_col">
+                <h3 ng-bind="profile_ctrl.user_settings.password"></h3>
+              </div>
+              <div class="col-lg-2 profile_form_col">
+                <button class="btn btn-default" ng-click="profile_ctrl.change('change_password')">Change</button>
+              </div>
+            </div>
+
+            <div class="row profile_form_row">
+              <div class="col-lg-4 profile_form_col">
+                <h3>Icon: </h3>
+              </div>
+              <div class="col-lg-6 profile_form_col">
+                <img ng-src="{{profile_ctrl.user_settings.icon}}"></img>
+              </div>
+              <div class="col-lg-2 profile_form_col">
+                <button class="btn btn-default" ng-click="profile_ctrl.change_icon()">Change</button>
+              </div>
+            </div>
+
+            <div class="row profile_form_row">
+              <div class="col-lg-4 profile_form_col">
+                <h3>Username: </h3>
+              </div>
+              <div class="col-lg-6 profile_form_col">
+                <h3 ng-bind="profile_ctrl.user_settings.username"></h3>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 form_col">
+
+
+            <div style="display:none" class="row form_change_row" id="change_screenname">
+              <div class="col-lg-8 for_change_col">
+                <input type="text" placeholder="new_screen_name" id="new_screen_name"></input>
+              </div>
+              <div class="col-lg-4 for_change_col">
+                <button class="btn btn-default" ng-click="profile_ctrl.submit('screenname', 'new_screen_name', 'change_screenname')">Submit</button>
+              </div>
+            </div>
+
+            <div style="display:none" class="row form_change_row" id="change_email">
+              <div class="col-lg-8 for_change_col">
+                <input type="text" placeholder="new_email" id="new_email"></input>
+              </div>
+              <div class="col-lg-4 for_change_col">
+                <button class="btn btn-default" ng-click="profile_ctrl.submit('email', 'new_email', 'change_email')">Submit</button>
+              </div>
+            </div>
+
+            <div style="display:none" class="row form_change_row" id="change_password">
+              <div class="col-lg-8 for_change_col">
+                <input type="text" placeholder="current_password" id="current_password"
+                  ng-blur="profile_ctrl.check_current_password()"></input>
+                <div style="display:none" id="password_error_1" class="error_message">
+                  <p>That is not your password...</p>
+                </div>
+                <input type="text" placeholder="new_password" id="new_password"
+                  ng-blur="profile_ctrl.check_new_password()"></input>
+                <div style="display:none" id="password_error_2" class="error_message">
+                  <p>Password must contain uppercase, lowercase, number, and character</p>
+                </div>
+                <input type="text" placeholder="confirm_new_password" id="confirm_new_password"
+                  ng-blur="profile_ctrl.check_new_password_confirm()"></input>
+                <div style="display:none" id="password_error_3" class="error_message">
+                  <p>Passwords must match</p>
+                </div>
+              </div>
+              <div class="col-lg-4 for_change_col">
+                <button class="btn btn-default" id="profile_password_submit" disabled="disabled"
+                  ng-click="profile_ctrl.submit('password', 'new_password', 'change_password')">Submit</button>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div style="display:none" class="row icon_change_row" id="change_icon">
+          <p>icons</p>
+          <div class="row">
+
+            <a ng-repeat="icon_image in profile_ctrl.icons" ><img class="thumbnail icon_change_thumb"
+                   ng-click="profile_ctrl.submit('icon', icon_image.icon, 'change_icon')" ng-src="{{icon_image.icon}}" alt="icon"></img></a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

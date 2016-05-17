@@ -1,0 +1,111 @@
+<div>
+  <div class="top_row"><h1>SIGN UP</h1></div>
+
+  <div class="container signup_container">
+
+    <div class="signup_page_row">
+
+      <div class="col-lg-6 form_col">
+
+        <form id="sign_up_form" class="sign_up_form" name="sign_up_form">
+
+          <div id="sign_up_hide_1" class="form-group">
+            <div class="row signup_row">
+              <div class="col-lg-12 signup_col">
+                <input type="text" placeholder="new_user_name" id="new_user_name" name="new_user_name"
+                    ng-blur="signup_ctrl.check_new_username()"
+                    ng-focus="signup_ctrl.display_explain('username_explain')" autocomplete="off"></input>
+                  <div style="display:none" id="username_error_1" class="error_message"><p>That name is taken</p></div>
+                  <div style="display:none" id="username_error_2" class="error_message"><p>UserName must be 5 characters long and only numbers and letters</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="sign_up_hide_2" class="form-group">
+            <div class="row signup_row">
+              <div class="col-lg-12 signup_col">
+                <input type="password" placeholder="new_password" id="new_password" name="new_password"
+                  ng-focus="signup_ctrl.display_explain('password_explain')"
+                  ng-blur="signup_ctrl.check_new_password()" autocomplete="off"></input>
+                  <div style="display:none" id="password_error_2" class="error_message"><p>Password must contain uppercase, lowercase, number, and character</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="sign_up_hide_3" class="form-group">
+            <div class="row signup_row">
+              <div class="col-lg-12 signup_col">
+                <input type="password" placeholder="confirm password"
+                  id="confirm_new_password" name="user_password_confirm"
+                  ng-blur="signup_ctrl.check_new_password_confirm()" autocomplete="off"></input>
+                  <div style="display:none" id="password_error_3" class="error_message"><p>Passwords must match</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="sign_up_hide_4" class="form-group">
+            <div class="row signup_row">
+              <div class="col-lg-12 signup_col">
+                <input type="text" placeholder="email"
+                  id="new_user_email" name="new_user_email" ng-focus="signup_ctrl.display_explain('email_explain')"
+                  ng-blur="signup_ctrl.check_new_user_email()" autocomplete="off"></input>
+                  <div style="display:none" id="enter_email" class="error_message"><p>Please enter email</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:none" id="user_confirm_block" class="form-group">
+            <div class="row signup_row">
+              <div class="col-lg-12 signup_col">
+                <input type="text" value="{{signup_ctrl.username}}" placeholder="username"
+                  id="enter_username" name="enter_code"></input>
+                <input type="text" placeholder="enter confirmation code"
+                  id="enter_code" name="enter_code"></input>
+                  <div class="explanation_text"><p>An email with a confirmation code has been sent to this address. Enter the code here to finish activation</p></div>
+                  <button id="enter_confirmation" class="btn btn-default" ng-click="signup_ctrl.check_confirmation('profile')">Enter</button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div id="sign_up_hide_5" class="form-group">
+            <div class="row signup_row">
+              <div class="col-lg-12 signup_col">
+                <button id="sign_in_submit" class="btn btn-default" ng-click="signup_ctrl.send_email()" disabled="disabled">Sign Up</button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="col-lg-6 form_col">
+        <div class="row">
+          <div style="display:none" id="username_explain" class="explain_row">
+            <p>Username is a unique name that 'Friend Zone' identifies you with. Your screenname will default to your username, but you can change it on the profile page.</p>
+          </div>
+
+          <div style="display:none" id="password_explain" class="explain_row">
+            <p>Passwords must 4-8 characters long, must have lowercase, uppercase, 1 number and 1 special character.</p>
+          </div>
+
+          <div style="display:none" id="email_explain" class="explain_row">
+            <p>Provide your email so we can make sure you aren't a spam bot...</p>
+          </div>
+
+        </div>
+        <div class="row log_in_switch_row">
+          <div class="signup_button_row"><p>Already have an account...</br> Log In</div>
+          <button class="btn btn-default" ng-click="signup_ctrl.log_in()">Log In</button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</div>

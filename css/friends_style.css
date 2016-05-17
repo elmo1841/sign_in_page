@@ -1,0 +1,17 @@
+.visible_friends_row {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50px 50px 0px 0px;
+  background-color: rgba(10, 10, 10, 0.8);
+  margin: 10px;
+  padding: 20px 15px;
+  padding-left: 30px;
+  min-width: 500px;
+  min-height: 400px;
+}
+
+
+.visible_friend_section {
+  float: left;
+  box-shadow: 10px 10px 5px rgba(186, 186, 186, 0.5);
+  padding: 15px;
+}

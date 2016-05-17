@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="app">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Friend_Zone</title>
+
+
+
+    <!-- Landing Page for Software Development Class
+        ECSU
+
+
+      index.html
+      author: Benjamin A Kilmer
+      date: 02/11/2016  -->
+
+    <!-- style sheets for css -->
+    <link rel="stylesheet" href="modules/bootstrap/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="css/styles.css"></link>
+    <link rel="stylesheet" href="css/friends_style.css"></link>
+
+  </head>
+  <!-- index controll serves as root scope can be used with broadcast and emit -->
+  <body ng-controller="index_controller as index_ctrl">
+
+
+    <!-- Top bar is visible in all pages after login serves as navigation -->
+    <div style="display:none" id="top_row" class="top_row" ng-controller="top_bar_controller as top_bar_ctrl">
+      <div class="container head_container" >
+        <div class="row head_row">
+          <div class="col-lg-2 head_title_col">
+            <h1></h1>  <!--space for possible title -->
+          </div>
+          <div class="col-lg-2">
+            <div class="dropdown open">
+              <button class="btn dropdown-toggle btn-lg" type="button"
+                id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-bind="top_bar_ctrl.user_settings.status">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <ul>
+                  <li><a ng-click="top_bar_ctrl.statusChange('Available');">Available</a></li>
+                  <li><a ng-click="top_bar_ctrl.statusChange('Busy');">Busy</a></li>
+                  <li><a ng-click="top_bar_ctrl.statusChange('Unavailable');">Unavailable</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <button class="btn btn-lg " ng-click="top_bar_ctrl.profile()">Profile</button>
+          </div>
+          <div class="col-lg-2">
+            <button class="btn btn-lg " ng-click="top_bar_ctrl.friendPage()">Friends Page</button>
+          </div>
+          <div class="col-lg-2">
+            <div class="btn-group">
+              <button type="button"  class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{top_bar_ctrl.user_settings.screenname}}
+                   <span></span><span class="badge">  {{top_bar_ctrl.alert_number}}</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/#/profile">Profile</a></li>
+                <li><a href="/#/loading_1">Friends</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#/logout">LogOut</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row user_info_row">
+
+        <div class="col-lg-3 screen_name_col">
+          <span></span>
+        </div>
+
+        <div class="col-lg-2 screen_name_col">
+          <span ng-bind="top_bar_ctrl.user_settings.screenname"></span>
+        </div>
+
+        <div class="col-lg-1 screen_name_col">
+          <img ng-src="{{top_bar_ctrl.user_settings.icon}}" alt="icon"></img>
+        </div>
+
+        <div class="col-lg-2 screen_name_col">
+          <!-- <span ng-bind="top_bar_ctrl.user_settings.online"></span> -->
+        </div>
+
+        <div class="col-lg-2 screen_name_col">
+
+        </div>
+
+        <div class="col-lg-2 screen_name_col">
+          <span></span>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div ng-view></div>  <!--app.js injects html here-->
+
+
+<!-- all module js pages -->
+    <script type="text/javascript" src="modules/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="modules/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="modules/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="modules/angular/angular-route.min.js"></script>
+
+<!-- js pages utilized by angular -->
+    <script type="text/javascript" src="app.js"></script>
+
+    <script type="text/javascript" src="controllers/index_controller.js"></script>
+    <script type="text/javascript" src="controllers/top_bar_controller.js"></script>
+    <script type="text/javascript" src="controllers/login_controller.js"></script>
+    <script type="text/javascript" src="controllers/signup_controller.js"></script>
+    <script type="text/javascript" src="controllers/main_window_controller.js"></script>
+    <script type="text/javascript" src="controllers/video_controller.js"></script>
+    <script type="text/javascript" src="controllers/profile_controller.js"></script>
+    <script type="text/javascript" src="controllers/friends_controller.js"></script>
+
+    <script type="text/javascript" src="services/user_service.js"></script>
+    <script type="text/javascript" src="services/signup_service.js"></script>
+    <script type="text/javascript" src="services/password_check_service.js"></script>
+    <script type="text/javascript" src="services/video_service.js"></script>
+    <script type="text/javascript" src="services/friend_service.js"></script>
+  </body>
+
+</html>

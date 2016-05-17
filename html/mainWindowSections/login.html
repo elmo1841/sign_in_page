@@ -1,0 +1,42 @@
+<div>
+  <div class="top_row"><h1>LOGIN to the FRIEND ZONE</h1></div>
+
+  <div class="container login_container">
+
+    <div class="login_page_row">
+
+      <div class="col-lg-6 form_col">
+
+        <div class="row login_row">
+          <div class="col-lg-12 login_col">
+            <input type="text" ng-model="login_ctrl.user_name" placeholder="user_name" autocomplete="off"></input>
+          </div>
+        </div>
+
+        <div class="row login_row">
+          <div class="col-lg-12 login_col">
+            <input type="password" ng-model="login_ctrl.user_password" id="current_password" placeholder="password" autocomplete="off"></input>
+          </div>
+        </div>
+
+        <div style="row">
+          <div style="display:none" id="password_error_1" class="error_message"><p>That user name and password do not match</p></div>
+        </div>
+
+        <div class="row login_row">
+          <div class="col-lg-12 login_col">
+            <button class="btn btn-default" ng-click="login_ctrl.authenticate('profile')">Log In</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 form_col">
+        <div class="signup_button_row"><p>Sign Up Now!</div>
+        <button class="btn btn-default" ng-click="login_ctrl.sign_up()">Sign Up</button>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
