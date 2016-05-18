@@ -6,19 +6,8 @@ app.controller('top_bar_controller', ['user_service', '$http', '$scope', functio
   /*usersettings populate the topbar with icon and screenname*/
 
   this.user_settings = {};
-  $scope.request_number = 0;
-  $scope.messages_number = 0;
-  $scope.alert_number = 0;
-
-  $scope.updateNumbers = function() {
-    console.log('updateNumbers');
-    $scope.request_number = user_service.getFriendRequests().length;
-    $scope.messages_number = user_service.getMessages().length;
-    $scope.alert_number = user_service.getAlert();
-  }
 
   this.getUserSettings = function(){
-    console.log('call');
     this.user_settings = user_service.getUserSettings();
   }
 

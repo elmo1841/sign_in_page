@@ -15,9 +15,6 @@ app.factory('user_service', ['$http', function($http) {
     getLoginUser: getLoginUser,
     getUserSettings: getUserSettings,
     getFriends: getFriends,
-    getFriendRequests: getFriendRequests,
-    getMessages: getMessages,
-    getAlert: getAlert,
 
     getIcons: getIcons,
     setIcons: setIcons,
@@ -36,8 +33,6 @@ app.factory('user_service', ['$http', function($http) {
   function getLoginUser(log_string, route_string) {
     var setting_string = "/setting" + log_string;
     var friend_string = "/friend" + log_string;
-    var friend_request_string = "/friend_requests" + log_string;
-    var message_string = "/messages" + log_string;
 
     var new_route_string = "/#/" + route_string;
 
@@ -57,21 +52,7 @@ app.factory('user_service', ['$http', function($http) {
         for(i = 0; i < temp_user_friend.length; i++) {
           user_in_view_friend.push(temp_user_friend[i]);
         }
-
-        $http.get(friend_request_string).then(function(response) {
-          var temp_friend_request = response.data;
-          for(i=0; i < temp_friend_request.length; i ++) {
-            friend_requests.push(temp_friend_request[i]);
-          }
-
-          $http.get(message_string).then(function(response) {
-            var temp_messages = response.data;
-            for(i=0; i < temp_messages.length; i ++) {
-              messages.push(temp_messages[i]);
-            }
-            window.location.assign(new_route_string);
-          })
-        })
+        window.location.assign(new_route_string);
       })
     })
   }
@@ -87,18 +68,6 @@ app.factory('user_service', ['$http', function($http) {
   function getFriends() {
     return user_in_view_friend;
   }
-  function getFriendRequests() {
-    return friend_requests;
-  }
-  function getMessages() {
-    return messages;
-  }
-
-  function getAlert() {
-    return (friend_requests.length + messages.length);
-  }
-
-
   /*populates icon list for when user wants to change their icon
   */
   function getIcons() {

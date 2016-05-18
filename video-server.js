@@ -3,8 +3,8 @@
 // all required modules listed in package
 var express = require('express');
 var bodyParser = require('body-parser');
-var fs = require('fs');
-var fd = require('fd');
+// var fs = require('fs');
+// var fd = require('fd');
 var path = require('path');
 var http = require('http');
 var url = require('url');

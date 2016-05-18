@@ -1,15 +1,30 @@
 {
-  "name": "Friend Zone",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "name": "friend_zone",
+  "version": "1.0.1",
+  "description": "Login Signup page",
   "dependencies": {
+    "ejs": "^2.4.1",
     "body-parser": "~1.0.0",
     "express": "~4.0.0",
     "method-override": "~1.0.0",
+    "mocha": "^2.4.5"
   },
-  "devDependencies": {
-    "connect-modrewrite": "^0.8.2"
-  }
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elmo1841/sign_in_page"
+  },
+  "author": "Benjamin Kilmer <benjaminkilmer@yahoo.com>",
+  "license": "CC-BY-1.0",
+  "bugs": {
+    "url": "http://github.com/openshift/nodejs-ex/issues"
+  },
+  "homepage": ""
 }
