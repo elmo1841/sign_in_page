@@ -101,6 +101,22 @@
 
     <div ng-view></div>  <!--app.js injects html here-->
 
+    <div class="container read_me_container">
+      <div class="row">
+          <div class="read_me"><a ng-click="index_ctrl.read_me_now()">Read Me</a></div>
+      </div>
+      <div style="display:none" id="instructions_row" class="row instructions_row">
+        <p>In order to log in, you can use:</br>
+          username: admin</br>
+          password: password</br>
+          You can create your own account by going to "Sign Up"</br>
+          You will need to put an email address in to receive a "verification code"</br>
+          Your email address will not be stored</p>
+          <a ng-click="index_ctrl.read_me_close()">close</a>
+      </div>
+    </div>
+
+
 
 <!-- all module js pages -->
     <script type="text/javascript" src="modules/jquery/jquery-2.1.4.min.js"></script>

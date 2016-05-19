@@ -173,3 +173,13 @@ input {
 .top_row>.btn-group-lg>.btn, .btn-lg {
   background-color: black !important;
 }
+
+.read_me_container {
+  padding-top: 100px;
+}
+
+.instructions_row>p {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(250, 250, 250, 0));
+  font-size: .5em;
+  padding-left: 10px;
+}
